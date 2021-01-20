@@ -4,8 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="copytext">&copy; MyProfile, All rights reserved | Design By: <a
-              href="https://themehippo.com">themehippo</a> largement retravaillé par mes soins. Dernière modification : 08/01/2021</div>
+            <div class="copytext">&copy; Jonathan GRUNDER | Design réalisé par <a href="https://themehippo.com" target="_blank">themehippo</a> largement retravaillé par mes soins. Dernières modifications : {{ lastModifDate }}</div>
           </div>
         </div>
       </div>
@@ -14,8 +13,14 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  computed: {
+    lastModifDate() {
+      return moment().format('DD/MM/YYYY')
+    }
+  }
 }
 </script>
 
