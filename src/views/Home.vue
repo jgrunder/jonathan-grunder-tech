@@ -31,60 +31,8 @@ import jQuery from 'jquery'
 import moment from 'moment'
 
 jQuery(function ($) {
-  // Update external data after page load ends
-  $(window).on('load', function() {
-    console.log("AbuseIPDB data loading...");
-    $('#aAbuseIP').prepend('<img src="https://www.abuseipdb.com/contributor/40338.svg" id="imgAbuseIpDB">');
-    console.log("AbuseIPDB data loaded!");
-    // Folding@Home score calculation
-    console.log("Folding@Home data loading...");
-    $.ajax({
-      url: 'https://apps.foldingathome.org/stats.py',
-      type: 'GET',
-      data: {'user': 'Sipherion', 'team': '250938', 'passkey': '700e0cdf412de3ff700e0cdf412de3ff', 'version': '7.5.1'},
-      cache: false,
-      dataType: 'jsonp',
-      success: dispatch
-    });
-
-    function dispatch(data) {
-      if (data == null) return;
-
-      $.each(data, function(i, cmd) {
-          try {
-              // debug('Command: ' + JSON.stringify(cmd));
-              var data = cmd[1];
-              $('#contribFAH').html('<a href="' + data.url + '" target="_blank">' + number_with_spaces(data.earned) + '</a>');
-              $('#teamFAH').html('<a href="' + data.team_url + '" target="_blank">' + data.team_name + '</a>');
-              $('#contribTeamFAH').html(number_with_spaces(data.team_total));
-              console.log("Folding@Home data loaded!");
-          } catch (err) {
-              console.log("Folding@Home data error!");
-              debug('Command "' + cmd + '": ' + err);
-          }
-      });
-    }
-
-    function debug(msg) {
-      if (typeof console == 'undefined' || typeof console.log == 'undefined')
-          return;
-
-      if (typeof msg !== 'string' && typeof JSON !== 'undefined')
-          msg = JSON.stringify(msg);
-
-      console.log('DEBUG: ' + msg);
-    }
-
-  });
-
-  function number_with_spaces(x) {
-    var parts = x.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    return parts.join(".");
-  }
-
-  // Immediately invoked function to set the theme on initial load
   (function () {
+    // Immediately invoked function to set the theme on initial load
     if (localStorage.getItem('theme') === 'theme-light') {
       setTheme('theme-light');
       $('#slider').prop('checked', true);
@@ -92,8 +40,6 @@ jQuery(function ($) {
       setTheme('theme-dark');
       $('#slider').prop('checked', false);
     }
-  })();
-  (function () {
     // Automatic age calculation
     $('#age').html(moment().diff(moment("1987-04-06"), 'years'));
     // Current experience duration
@@ -101,20 +47,21 @@ jQuery(function ($) {
     let dateDiffMonth = '';
     if(dateDiff.months() > 0) { dateDiffMonth = ' et ' + dateDiff.months() + ' mois'; }
     $('#lastExpDuration').html(dateDiff.years() + ' ans' + dateDiffMonth);
-    // Modify default ul list style with Fontawesome4
+    // Modify default ul lists style with Fontawesome4
     $("ul.fa-ul-code").find("li").prepend('<i class="fa-li fa fa-code"></i>');
     $("ul.fa-ul-pen").find("li").prepend('<i class="fa-li fa fa-github"></i>');
     // All external links should open a new tab
     $("a[href^='http']").attr('target', '_blank');
     // Hide contact error div
     $('#errorDiv').hide();
-
     loadTech();
 
+    // Events
+    // Click on theme switcher
     $('#slider').on('click', function() {
       toggleTheme();
     });
-
+    // Send message form
 		$("#sendMessage").click(function(e){
 			e.preventDefault();
       if(!isFormValid()) return;
@@ -154,7 +101,62 @@ jQuery(function ($) {
 				}
 			});
 		});
+    // Loading Data
+    console.log("AbuseIPDB data loading...");
+    $('#aAbuseIP').prepend('<img src="https://www.abuseipdb.com/contributor/40338.svg" id="imgAbuseIpDB">');
+    console.log("AbuseIPDB data loaded!");
+    // Folding@Home score calculation
+    console.log("Folding@Home data loading...");
+    $.ajax({
+      url: 'https://apps.foldingathome.org/stats.py',
+      type: 'GET',
+      data: {'user': 'Sipherion', 'team': '250938', 'passkey': '700e0cdf412de3ff700e0cdf412de3ff', 'version': '7.5.1'},
+      cache: false,
+      dataType: 'jsonp',
+      success: dispatch
+    });
+    function dispatch(data) {
+      if (data == null) return;
+      $.each(data, function(i, cmd) {
+        try {
+          // debug('Command: ' + JSON.stringify(cmd));
+          var data = cmd[1];
+          $('#contribFAH').html('<a href="' + data.url + '" target="_blank">' + number_with_spaces(data.earned) + '</a>');
+          $('#teamFAH').html('<a href="' + data.team_url + '" target="_blank">' + data.team_name + '</a>');
+          $('#contribTeamFAH').html(number_with_spaces(data.team_total));
+          console.log("Folding@Home data loaded!");
+        } catch (err) {
+          console.log("Folding@Home data error!");
+          debug('Command "' + cmd + '": ' + err);
+        }
+      });
+    }
+    /**
+     * Log into console a debug message
+     * @param  {mix} msg Message to show
+     * @return {void}
+     */
+    function debug(msg) {
+      if (typeof console == 'undefined' || typeof console.log == 'undefined') return;
+      if (typeof msg !== 'string' && typeof JSON !== 'undefined') msg = JSON.stringify(msg);
+      console.log('DEBUG: ' + msg);
+    }
   }());
+  /**
+   * French number format
+   * @param  {integer} x The number to transform
+   * @return {string}    The transformed number
+   */
+  function number_with_spaces(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return parts.join(".");
+  }
+  /**
+   * Load all tech skills
+   * TODO: use VueJS template
+   * @return {void}
+   */
   function loadTech() {
     $.getJSON("experience.json", function( data ) {
       var languages = data.languages;
@@ -173,14 +175,21 @@ jQuery(function ($) {
       });
     });
   }
-
+  /**
+   * Get years for a date interval
+   * @param  {mixed} val The start date
+   * @return {integer}   Number of years
+   */
   function getYears(val) {
     if($.isNumeric(val)) return val;
     var years = moment().diff(moment(val), 'years');
     if(years > 0) return years;
     return 1;
   }
-
+  /**
+   * Check if the contact form is valid with all required data
+   * @return {Boolean} [description]
+   */
   function isFormValid() {
     let isValid = true;
     // Check that all required fields are filled
@@ -203,16 +212,21 @@ jQuery(function ($) {
       isValid = true;
       $('.missing-data-recaptcha').removeClass("hidden");
     }
-
     return isValid;
   }
-
+  /**
+   * Check if the specified string is a valid email format
+   * @param  {string}  email The string to check
+   * @return {Boolean}
+   */
   function isEmail(email) {
     var regex = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
   }
-
-  // function to toggle between light and dark theme
+  /**
+   * Function to toggle between light and dark theme
+   * @return {Void}
+   */
   function toggleTheme() {
     if (localStorage.getItem('theme') === 'theme-dark') {
       setTheme('theme-light');
@@ -220,8 +234,10 @@ jQuery(function ($) {
       setTheme('theme-dark');
     }
   }
-
-  // function to set a given theme/color-scheme
+  /**
+   * Function to set a given theme/color-scheme
+   * @param {string} themeName The theme name to apply
+   */
   function setTheme(themeName) {
     localStorage.setItem('theme', themeName);
     switch (themeName) {
