@@ -14,11 +14,12 @@
 
 <script>
 import moment from 'moment'
+import json from '../store/lastupdate.json'
 export default {
   name: 'Footer',
   computed: {
     lastModifDate() {
-      return moment().format('DD/MM/YYYY')
+      return moment(json.dateUpdate).format('DD/MM/YYYY')
     }
   }
 }
