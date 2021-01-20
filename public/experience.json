@@ -1,0 +1,81 @@
+{
+  "languages": {
+    "html5": {
+      "name_fr": "HTML5",
+      "name_en": "HTML5",
+      "start_date": "2012-06-01"
+    },
+    "css3": {
+      "name_fr": "CSS3",
+      "name_en": "CSS3",
+      "start_date": "2013-06-01"
+    },
+    "php": {
+      "name_fr": "PHP 5 & 7",
+      "name_en": "PHP 5 & 7",
+      "start_date": "2013-06-01"
+    },
+    "js": {
+      "name_fr": "Javascript",
+      "name_en": "Javascript",
+      "start_date": "2013-06-01"
+    },
+    "vba": {
+      "name_fr": "VB.NET & VBA",
+      "name_en": "VB.NET & VBA",
+      "start_date": 5
+    },
+    "jquery": {
+      "name_fr": "jQuery",
+      "name_en": "jQuery",
+      "start_date": "2016-01-01"
+    },
+    "laravel": {
+      "name_fr": "Framework Laravel",
+      "name_en": "Laravel Framework",
+      "start_date": "2017-01-01"
+    },
+    "nodejs": {
+      "name_fr": "NodeJS",
+      "name_en": "NodeJS",
+      "start_date": "2019-01-01"
+    }
+  },
+  "tools": {
+    "otrs": {
+      "name_fr": "OTRS",
+      "name_en": "OTRS",
+      "start_date": "2013-09-01"
+    },
+    "citrix": {
+      "name_fr": "Citrix",
+      "name_en": "Citrix",
+      "start_date": 6
+    },
+    "zabbix": {
+      "name_fr": "ZABBIX",
+      "name_en": "ZABBIX",
+      "start_date": "2015-06-01"
+    },
+    "prtg": {
+      "name_fr": "PRTG",
+      "name_en": "PRTG",
+      "start_date": 4
+    },
+    "genesys": {
+      "name_fr": "GENESYS",
+      "name_en": "GENESYS",
+      "start_date": 4
+    },
+    "smt": {
+      "name_fr": "REMEDY SMT",
+      "name_en": "REMEDY SMT",
+      "start_date": 3
+    },
+    "kes": {
+      "name_fr": "KES",
+      "name_en": "KES",
+      "start_date": "2019-06-01"
+    }
+  }
+}
