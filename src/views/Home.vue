@@ -55,7 +55,6 @@ jQuery(function ($) {
     // Hide contact error div
     $('#errorDiv').hide();
     loadTech();
-
     // Events
     // Click on theme switcher
     $('#slider').on('click', function() {
@@ -142,6 +141,7 @@ jQuery(function ($) {
       console.log('DEBUG: ' + msg);
     }
   }());
+
   /**
    * French number format
    * @param  {integer} x The number to transform
