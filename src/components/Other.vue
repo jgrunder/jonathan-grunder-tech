@@ -11,7 +11,7 @@
           <div class="row">
             <div class="col">
               <ul class="fa-ul fa-ul-code">
-                <li><span>Sauveteur Secouriste du Travail</span> depuis le 13 Octobre 2020</li>
+                <li><a href="https://www.inrs.fr/services/formation/publics/sauveteur-secouriste.html">Sauveteur Secouriste du Travail</a> depuis le 13 Octobre 2020</li>
                 <li>Concepteur d’<span>applications</span> pour <span>Streamers professionnels</span></li>
                 <li><span>Administrateur</span> de serveurs de jeu</li>
                 <li>Concepteur amateur de <span>mods</span> et de <span>cartes</span> sur <span>Unreal Engine</span> et <span>Unity</span></li>
