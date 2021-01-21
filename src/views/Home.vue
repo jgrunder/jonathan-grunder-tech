@@ -43,7 +43,7 @@ jQuery(function ($) {
     // Automatic age calculation
     $('#age').html(moment().diff(moment("1987-04-06"), 'years'));
     // Current experience duration
-    let dateDiff = moment.duration(moment().diff(moment("2013-09-01")));
+    let dateDiff = moment.duration(moment().diff(moment("2019-07-01")));
     let dateDiffMonth = '';
     if(dateDiff.months() > 0) { dateDiffMonth = ' et ' + dateDiff.months() + ' mois'; }
     $('#lastExpDuration').html(dateDiff.years() + ' ans' + dateDiffMonth);
