@@ -29,7 +29,7 @@
             <div class="col-md-4 col-lg-3">
               <div class="personal-details">
                 <strong>6 AVRIL 1987</strong>
-                <small><span id="age"></span>&nbsp;ANS</small>
+                <small>{{ age }} ANS</small>
               </div>
             </div>
             <div class="col-md-4 col-lg-3">
@@ -58,10 +58,16 @@
 
 <script>
 import Switcher from '@/components/Switcher.vue'
+import moment from 'moment'
 export default {
   name: 'Header',
   components: {
     Switcher
+  },
+  computed: {
+    age() {
+      return moment().diff(moment("1987-04-06"), 'years')
+    }
   }
 }
 </script>

@@ -40,8 +40,6 @@ jQuery(function ($) {
       setTheme('theme-dark');
       $('#slider').prop('checked', false);
     }
-    // Automatic age calculation
-    $('#age').html(moment().diff(moment("1987-04-06"), 'years'));
     // Current experience duration
     let dateDiff = moment.duration(moment().diff(moment("2019-07-01")));
     let dateDiffMonth = '';
