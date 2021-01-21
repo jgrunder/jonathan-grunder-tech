@@ -465,6 +465,17 @@ body.dark-mode {
   img {
     background-color: rgb(208, 204, 197);
   }
+
+  .timeline {
+    &:before {
+      background-color: #eee;
+    }
+    & > li {
+      & > .timeline-badge {
+        color: #ddd;
+      }
+    }
+  }
 }
 
 

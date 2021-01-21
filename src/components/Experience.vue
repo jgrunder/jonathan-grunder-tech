@@ -245,6 +245,9 @@ li > a::after {
   small {
     color: #d0ccc5;
   }
+  h3 {
+    color: #d0ccc5 !important;
+  }
 }
 /**
  * Timeline
@@ -259,7 +262,7 @@ li > a::after {
     position: absolute;
     content: " ";
     width: 3px;
-    background-color: #eeeeee;
+    background-color: #ccc;
     left: 10%;
     margin-left: -1.5px;
   }
@@ -309,7 +312,7 @@ li > a::after {
       }
     }
     & > .timeline-badge {
-      color: #fff;
+      color: #aaa;
       width: 24px;
       height: 24px;
       line-height: 50px;
