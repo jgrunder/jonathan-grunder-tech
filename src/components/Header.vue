@@ -46,7 +46,7 @@
             </div>
           </div>
           <ul class="social-icon">
-            <li><a href="https://www.linkedin.com/in/jonathan-grunder-bab717b6/" data-toggle="tooltip" title="Visiter mon profil Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/jonathangrunder/" data-toggle="tooltip" title="Visiter mon profil Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             <li><a href="https://github.com/jgrunder" data-toggle="tooltip" title="Visiter mon profil GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
             <li><a href="./Jonathan-GRUNDER-CV-FRENCH.pdf" data-toggle="tooltip" title="Télécharger mon CV au format PDF"><i class="fa fa-cloud-download" aria-hidden="true"></i></a></li>
           </ul>
