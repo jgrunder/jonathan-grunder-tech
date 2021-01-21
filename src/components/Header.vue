@@ -28,7 +28,7 @@
           <div class="row personal-data">
             <div class="col-md-4 col-lg-3">
               <div class="personal-details">
-                <strong>6 AVRIL 1987</strong>
+                <strong>{{ birthDate.format('DD MMMM YYYY').toUpperCase() }}</strong>
                 <small>{{ age }} ANS</small>
               </div>
             </div>
@@ -59,14 +59,20 @@
 <script>
 import Switcher from '@/components/Switcher.vue'
 import moment from 'moment'
+moment.locale('fr')
 export default {
   name: 'Header',
+  data() {
+    return {
+      birthDate: moment("1987-04-06")
+    }
+  },
   components: {
     Switcher
   },
   computed: {
     age() {
-      return moment().diff(moment("1987-04-06"), 'years')
+      return moment().diff(this.birthDate, 'years')
     }
   }
 }
