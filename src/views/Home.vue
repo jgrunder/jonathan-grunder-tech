@@ -40,11 +40,6 @@ jQuery(function ($) {
       setTheme('theme-dark');
       $('#slider').prop('checked', false);
     }
-    // Current experience duration
-    let dateDiff = moment.duration(moment().diff(moment("2019-07-01")));
-    let dateDiffMonth = '';
-    if(dateDiff.months() > 0) { dateDiffMonth = ' et ' + dateDiff.months() + ' mois'; }
-    $('#lastExpDuration').html(dateDiff.years() + ' ans' + dateDiffMonth);
     // Modify default ul lists style with Fontawesome4
     $("ul.fa-ul-code").find("li").prepend('<i class="fa-li fa fa-code"></i>');
     $("ul.fa-ul-pen").find("li").prepend('<i class="fa-li fa fa-github"></i>');

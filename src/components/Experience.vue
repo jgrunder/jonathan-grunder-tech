@@ -18,7 +18,7 @@
                       <div>
                         <img class="img-responsive" src="~@/assets/comdata.png" />
                         <div class="job-desc">
-                          <small>juillet 2019 à aujourd'hui (<span id="lastExpDuration"></span>)</small>
+                          <small>{{ lastExpDate.format("MMMM YYYY") }} à aujourd'hui ({{ lastExpDuration }})</small>
                           <h3>TECHNICIEN INFORMATIQUE</h3>
                         </div>
                       </div>
@@ -208,8 +208,23 @@
 </template>
 
 <script>
+import moment from 'moment'
+moment.locale('fr')
 export default {
-  name: 'Experience'
+  name: 'Experience',
+  data() {
+    return {
+      lastExpDate: moment("2019-07-01")
+    }
+  },
+  computed: {
+    lastExpDuration() {
+      let dateDiff = moment.duration(moment().diff(this.lastExpDate))
+      let dateDiffMonth = ''
+      if(dateDiff.months() > 0) { dateDiffMonth = ' et ' + dateDiff.months() + ' mois'; }
+      return dateDiff.years() + ' ans' + dateDiffMonth
+    }
+  }
 }
 </script>
 
