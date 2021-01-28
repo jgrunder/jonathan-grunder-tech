@@ -11,7 +11,11 @@
           <div class="row">
             <ul class="timeline">
               <li class="timeline-inverted">
-                <div class="timeline-badge primary"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></div>
+                <div class="timeline-badge primary">
+                  <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                  <span class="cat-year">{{ lastExpYear }}</span>
+                  <span class="cat-year sub">2019</span>
+                </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <a href="https://france.comdatagroup.com/fr">
@@ -69,7 +73,11 @@
                 </div>
               </li>
               <li class="timeline-inverted">
-                <div class="timeline-badge primary"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></div>
+                <div class="timeline-badge primary">
+                  <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                  <span class="cat-year">2019</span>
+                  <span class="cat-year sub">2013</span>
+                </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <a href="https://www.boschservicesolutions.com/fr/">
@@ -130,7 +138,11 @@
                 </div>
               </li>
               <li class="timeline-inverted">
-                <div class="timeline-badge primary"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></div>
+                <div class="timeline-badge primary">
+                  <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                  <span class="cat-year">2013</span>
+                  <span class="cat-year sub">2010</span>
+                </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <a href="https://www.boschservicesolutions.com/fr/">
@@ -153,7 +165,11 @@
                 </div>
               </li>
               <li class="timeline-inverted">
-                <div class="timeline-badge primary"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></div>
+                <div class="timeline-badge primary">
+                  <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                  <span class="cat-year">2010</span>
+                  <span class="cat-year sub">2008</span>
+                </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <a href="https://www.boschservicesolutions.com/fr/">
@@ -176,7 +192,11 @@
                 </div>
               </li>
               <li class="timeline-inverted">
-                <div class="timeline-badge primary"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></div>
+                <div class="timeline-badge primary">
+                  <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                  <span class="cat-year">2007</span>
+                  <span class="cat-year sub">2005</span>
+                </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <a href="https://www.cetelem.fr/fr/qui-sommes-nous">
@@ -223,6 +243,9 @@ export default {
       let dateDiffMonth = ''
       if(dateDiff.months() > 0) { dateDiffMonth = ' et ' + dateDiff.months() + ' mois'; }
       return dateDiff.years() + ' ans' + dateDiffMonth
+    },
+    lastExpYear() {
+      return moment().year()
     }
   }
 }
@@ -267,6 +290,18 @@ li > a::after {
 /**
  * Timeline
  */
+.cat-year {
+  position: absolute;
+  left: -80px;
+  color: rgba(180, 180, 180, 0.4);
+  font: italic 1.5em fantasy;
+  text-shadow: 5px 0 10px rgba(180, 180, 180, 0.5);
+  &.sub {
+    top: 50px;
+    font-size: 0.9em;
+    text-shadow: 2px 0 10px rgba(120, 120, 120, 0.7);
+  }
+}
 .timeline {
   list-style: none;
   padding: 20px 0 20px;
