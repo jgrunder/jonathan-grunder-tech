@@ -8,7 +8,7 @@
           </div>
         </div>
         <div class="col-md-9">
-          <div class="row">
+          <div class="row include">
             <div class="col-md-4">
               <div class="content-item">
                 <a id="aAbuseIP" href="https://www.abuseipdb.com/user/40338" title="AbuseIPDB is an IP address blacklist for webmasters and sysadmins to report IP addresses engaging in abusive behavior on their networks" alt="AbuseIPDB Contributor Badge"></a>
@@ -25,6 +25,15 @@
               </div>
             </div>
           </div>
+          <div class="row include">
+            <div class="col-md-4">
+              <div class="content-item">
+                <a href="https://www.signal-spam.fr/membres-de-lassociation/internautes/">
+                  <img src="~@/assets/spam.png">
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -38,5 +47,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.content-item {
+  padding: 10px;
+  margin-bottom: 0;
+}
+.include {
+  background-color: #d0ccc5;
+  color: #444;
+}
 </style>
