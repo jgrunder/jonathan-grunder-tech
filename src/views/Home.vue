@@ -102,7 +102,7 @@ jQuery(function ($) {
     $.ajax({
       url: 'https://apps.foldingathome.org/stats.py',
       type: 'GET',
-      data: {'user': 'Sipherion', 'team': '250938', 'passkey': '700e0cdf412de3ff700e0cdf412de3ff', 'version': '7.5.1'},
+      data: {'user': 'Sipherion', 'team': '51', 'passkey': '700e0cdf412de3ff700e0cdf412de3ff', 'version': '7.5.1'},
       cache: false,
       dataType: 'jsonp',
       success: dispatch
