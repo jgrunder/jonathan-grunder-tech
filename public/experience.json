@@ -3,22 +3,22 @@
     "html5": {
       "name_fr": "HTML5",
       "name_en": "HTML5",
-      "start_date": "2012-06-01"
+      "start_date": 8
     },
     "css3": {
       "name_fr": "CSS3",
       "name_en": "CSS3",
-      "start_date": "2013-06-01"
+      "start_date": 8
     },
     "php": {
       "name_fr": "PHP 5 & 7",
       "name_en": "PHP 5 & 7",
-      "start_date": "2013-06-01"
+      "start_date": 7
     },
     "js": {
       "name_fr": "Javascript",
       "name_en": "Javascript",
-      "start_date": "2013-06-01"
+      "start_date": 7
     },
     "vba": {
       "name_fr": "VB.NET & VBA",
@@ -28,24 +28,24 @@
     "jquery": {
       "name_fr": "jQuery",
       "name_en": "jQuery",
-      "start_date": "2016-01-01"
+      "start_date": 5
     },
     "laravel": {
       "name_fr": "Framework Laravel",
       "name_en": "Laravel Framework",
-      "start_date": "2017-01-01"
+      "start_date": 4
     },
     "nodejs": {
       "name_fr": "NodeJS",
       "name_en": "NodeJS",
-      "start_date": "2019-01-01"
+      "start_date": 1
     }
   },
   "tools": {
     "otrs": {
       "name_fr": "OTRS",
       "name_en": "OTRS",
-      "start_date": "2013-09-01"
+      "start_date": 7
     },
     "citrix": {
       "name_fr": "Citrix",
@@ -72,10 +72,15 @@
       "name_en": "REMEDY SMT",
       "start_date": 3
     },
+    "glpi": {
+      "name_fr": "GLPI",
+      "name_en": "GLPI",
+      "start_date": "2019-06-01"
+    },
     "kes": {
       "name_fr": "KES",
       "name_en": "KES",
-      "start_date": "2019-06-01"
+      "start_date": 2
     }
   }
 }
