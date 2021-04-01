@@ -72,15 +72,15 @@
       "name_en": "REMEDY SMT",
       "start_date": 3
     },
-    "glpi": {
-      "name_fr": "GLPI",
-      "name_en": "GLPI",
-      "start_date": "2019-06-01"
-    },
     "kes": {
       "name_fr": "KES",
       "name_en": "KES",
       "start_date": 2
+    },
+    "glpi": {
+      "name_fr": "GLPI",
+      "name_en": "GLPI",
+      "start_date": "2019-07-01"
     }
   }
 }
