@@ -23,7 +23,7 @@
                         <img class="img-responsive" src="~@/assets/dodo.png" />
                         <div class="job-desc">
                           <small>{{ lastExpDate.format("MMMM YYYY") }} à aujourd'hui ({{ lastExpDuration }})</small>
-                          <h3>TECHNICIEN INFORMATIQUE</h3>
+                          <h3>TECHNICIEN SYSTÈMES ET RÉSEAUX</h3>
                         </div>
                       </div>
                     </a>
