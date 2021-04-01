@@ -278,15 +278,22 @@ export default {
   name: 'Experience',
   data() {
     return {
-      lastExpDate: moment("2021-02-04")
+      lastExpDate: moment("2021-02-01")
     }
   },
   computed: {
     lastExpDuration() {
       let dateDiff = moment.duration(moment().diff(this.lastExpDate))
       let dateDiffMonth = ''
+      let textYear = ' an'
+      if(dateDiff.years() == 0) {
+        return dateDiff.months() + ' mois'
+      }
       if(dateDiff.months() > 0) { dateDiffMonth = ' et ' + dateDiff.months() + ' mois'; }
-      return dateDiff.years() + ' ans' + dateDiffMonth
+      if(dateDiff.years() > 1) {
+        textYear += 's'
+      }
+      return dateDiff.years() + textYear + dateDiffMonth
     },
     lastExpYear() {
       return moment().year()
