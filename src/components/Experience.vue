@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-3 borders">
           <div class="section-title">
-            <h2>Expérience professionnelle</h2>
+            <h2>Expériences professionnelles</h2>
           </div>
         </div>
         <div class="col-md-9 borders">
@@ -14,6 +14,50 @@
                 <div class="timeline-badge primary">
                   <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
                   <span class="cat-year">{{ lastExpYear }}</span>
+                  <!-- <span class="cat-year sub">2021</span> -->
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <a href="https://www.dodo.fr/groupe-dodo.html">
+                      <div>
+                        <img class="img-responsive" src="~@/assets/dodo.png" />
+                        <div class="job-desc">
+                          <small>{{ lastExpDate.format("MMMM YYYY") }} à aujourd'hui ({{ lastExpDuration }})</small>
+                          <h3>TECHNICIEN INFORMATIQUE</h3>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="timeline-body">
+                    <ul class="fa-ul fa-ul-code">
+                      <li>Répondre aux appels, e-mails et <span>tickets d’assistance</span>, aider les employés de l'ensemble du groupe à résoudre leurs problèmes informatiques –
+                        <a href="https://glpi-project.org/fr/"><span>GLPI</span></a>
+                      </li>
+                      <li>Gérer un domaine <span>Active Directory</span>, contrôler et sécuriser le matériel et les logiciels grâce à des déploiements de <span>GPO</span>.</li>
+                      <li>Assurer la <span>disponibilité</span> et <span>l’intégrité</span> du réseau, des systèmes et des données – Administration
+                        <span>WSUS</span>,
+                        <span>Windows Server</span>,
+                        <span>SQL Server</span>,
+                        <span>Debian</span>
+                      </li>
+                      <li>Gérer la <span>sécurité</span>, surveillance du <span>réseau</span> et des serveurs sur site et hors site -
+                        <a href="https://www.zabbix.com/"><span>ZABBIX</span></a>,
+                        <a href="https://www.realvnc.com/fr/connect/download/viewer/"><span>VNC</span></a> et
+                        <a href="https://www.teamviewer.com/fr/"><span>TeamViewer</span></a>,
+                        <a href="https://www.eset.com/fr/"><span>ESET</span></a>
+                      </li>
+                      <li><span>Virtualiser</span> un parc informatique et maintenir les Masters sous
+                        <a href="https://www.vmware.com/fr/products/vsphere.html"><span>VMWare</span></a>
+                      </li>
+                      <li>Intégrer des ordinateurs <span>Windows 10</span> et leurs équipements au <span>réseau</span> d’entreprise et <span>VoIP</span>, déploiement d’applications à l’aide de <span>KSC</span>.</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-badge primary">
+                  <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                  <span class="cat-year">2021</span>
                   <span class="cat-year sub">2019</span>
                 </div>
                 <div class="timeline-panel">
@@ -22,7 +66,7 @@
                       <div>
                         <img class="img-responsive" src="~@/assets/comdata.png" />
                         <div class="job-desc">
-                          <small>{{ lastExpDate.format("MMMM YYYY") }} à aujourd'hui ({{ lastExpDuration }})</small>
+                          <small>juillet 2019 à janvier 2021 <span>(1 an et 7 mois)</span></small>
                           <h3>TECHNICIEN INFORMATIQUE</h3>
                         </div>
                       </div>
@@ -234,7 +278,7 @@ export default {
   name: 'Experience',
   data() {
     return {
-      lastExpDate: moment("2019-07-01")
+      lastExpDate: moment("2021-02-04")
     }
   },
   computed: {
@@ -399,6 +443,9 @@ li > a::after {
     }
     &:nth-child(2) {
       margin-top: 60px;
+    }
+    & .img-responsive {
+      width: 100%;
     }
   }
   &-badge > a {
